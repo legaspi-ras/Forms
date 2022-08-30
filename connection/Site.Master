@@ -1,0 +1,79 @@
+﻿<%@ Master Language="VB" AutoEventWireup="true" CodeBehind="Site.master.vb" Inherits="connection.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - eForms</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+
+        <%--bootstrap css--%>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+      <%--datatables css--%>
+    <link href="datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+      <%--fontawesome css--%>
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+      <%--jquery--%>
+     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+      <%--popper js--%>
+    <script src="bootstrap/js/popper.min.js"></script>
+      <%--bootstrap js--%>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+     <form id="form1" runat="server">
+    
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
+            <div class="container-fluid">
+                 <a class="navbar-brand" href="Default.aspx">
+                     <img src="imgs/dcc_logo.png" alt="" width="70" height="25" class="d-inline-block align-text-top"/>
+                      e Forms
+                 </a>
+                <%--pag lumiit ng window --%>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+                 <div class="collapse navbar-collapse" id="navbarsExample03">
+                     <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                         <li class="nav-item">
+                             <a class="nav-link active" aria-current="page" href="Default.aspx">Home</a>
+                         </li>
+                          <li class="nav-item">
+                             <a class="nav-link" href="WebForm6.aspx">Upload Request</a>
+                         </li>
+                         <li class="nav-item">
+                             <a class="nav-link" href="WebForm8.aspx">View Request</a>
+                         </li>                       
+                         <li class="nav-item">
+                             <a class="nav-link" href="Login.aspx">Approvers</a>
+                         </li> 
+                         <li class="nav-item">
+                             <a class="nav-link" href="Login.aspx">DIC</a>
+                         </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+        <div class="container-fluid">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>
