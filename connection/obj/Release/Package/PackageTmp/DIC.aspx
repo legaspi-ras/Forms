@@ -32,9 +32,12 @@
                     <asp:BoundField DataField="requestorDepartment" HeaderText="Department" SortExpression="requestorDepartment" />
                     <asp:BoundField DataField="requestStatus" HeaderText="Status" SortExpression="requestStatus" />
                     <asp:BoundField DataField="requestDate" DataFormatString="&quot;{0:d}&quot;" HeaderText="Request Date" SortExpression="requestDate" />
+                    <asp:BoundField DataField="approvDate" DataFormatString="&quot;{0:d}&quot;" HeaderText="Approve Date" SortExpression="approvDate" />
                     <asp:TemplateField HeaderText="Action">
                         <ItemTemplate>
-                            <asp:Button ID="Button1" runat="server" class="btn btn-primary" CausesValidation="false" CommandName="Select" Text="View" />
+
+                            <asp:Button ID="Button1" runat="server" class="btn btn-primary" CausesValidation="false" CommandName="Select" Text="Select" />
+
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

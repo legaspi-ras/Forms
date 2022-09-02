@@ -37,6 +37,195 @@ connection
  Returns the Asp log object.
  </summary>
 </member>
+<member name="F:connection.adminupload._btnLogout">
+<summary>
+btnLogout control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.adminupload._btnview">
+<summary>
+btnview control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.adminupload._btndownload">
+<summary>
+btndownload control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.adminupload._Label6">
+<summary>
+Label6 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.adminupload._DropDownList1">
+<summary>
+DropDownList1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.adminupload._FileUpload1">
+<summary>
+FileUpload1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.adminupload._btnupdate">
+<summary>
+btnupdate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.adminupload._Label1">
+<summary>
+Label1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.adminupload._lblRequestor">
+<summary>
+lblRequestor control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.adminupload._Label11">
+<summary>
+Label11 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.adminupload._lblRequestordept">
+<summary>
+lblRequestordept control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.adminupload._lblfilename">
+<summary>
+lblfilename control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.adminupload._lblContenttype">
+<summary>
+lblContenttype control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.adminupload._Label2">
+<summary>
+Label2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.adminupload._lblFormdept">
+<summary>
+lblFormdept control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.adminupload._Label3">
+<summary>
+Label3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.adminupload._lblFormctrlnum">
+<summary>
+lblFormctrlnum control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.adminupload._Label4">
+<summary>
+Label4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.adminupload._lblFormtitle">
+<summary>
+lblFormtitle control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.adminupload._Label5">
+<summary>
+Label5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.adminupload._lblAppsspecs">
+<summary>
+lblAppsspecs control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:connection.Approver._form1">
 <summary>
 form1 control.
@@ -67,15 +256,6 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:connection.About._ddlDepartment">
 <summary>
 ddlDepartment control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.About._SqlDataSource2">
-<summary>
-SqlDataSource2 control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -334,177 +514,6 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:connection._Default._Label2">
-<summary>
-Label2 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection._Default._lblDepartment">
-<summary>
-lblDepartment control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection._Default._Label3">
-<summary>
-Label3 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection._Default._lblFormctrlnum">
-<summary>
-lblFormctrlnum control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection._Default._Label4">
-<summary>
-Label4 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection._Default._lblFormtitle">
-<summary>
-lblFormtitle control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection._Default._Label5">
-<summary>
-Label5 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection._Default._txtasn">
-<summary>
-txtasn control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection._Default._lblfilename">
-<summary>
-lblfilename control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection._Default._lblContenttype">
-<summary>
-lblContenttype control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection._Default._Label6">
-<summary>
-Label6 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection._Default._txtEmpnum">
-<summary>
-txtEmpnum control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection._Default._btnsearch1">
-<summary>
-btnsearch1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection._Default._Label1">
-<summary>
-Label1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection._Default._lblRequestor">
-<summary>
-lblRequestor control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection._Default._Label11">
-<summary>
-Label11 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection._Default._lblRequestordept">
-<summary>
-lblRequestordept control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection._Default._btnDowload">
-<summary>
-btnDowload control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection._Default._HyperLink1">
-<summary>
-HyperLink1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
 <member name="F:connection.DIC1._btnLogout">
 <summary>
 btnLogout control.
@@ -595,6 +604,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:connection.Login._lblalert">
+<summary>
+lblalert control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:connection.Login._btnLogin">
 <summary>
 btnLogin control.
@@ -676,213 +694,6 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:connection.WebForm1._form1">
-<summary>
-form1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm1._Label1">
-<summary>
-Label1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm1._Label2">
-<summary>
-Label2 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm1._Button1">
-<summary>
-Button1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm1._GridView2">
-<summary>
-GridView2 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm1._GridView3">
-<summary>
-GridView3 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm1._FileUpload2">
-<summary>
-FileUpload2 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm1._Button3">
-<summary>
-Button3 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm1._Calendar1">
-<summary>
-Calendar1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm1._GridView1">
-<summary>
-GridView1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm1._SqlDataSource1">
-<summary>
-SqlDataSource1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm1._TextBox1">
-<summary>
-TextBox1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm1._TextBox2">
-<summary>
-TextBox2 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm1._TextBox3">
-<summary>
-TextBox3 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm1._TextBox4">
-<summary>
-TextBox4 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm1._FileUpload1">
-<summary>
-FileUpload1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm1._btnUpload">
-<summary>
-btnUpload control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm1._Button2">
-<summary>
-Button2 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm1._Label3">
-<summary>
-Label3 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm1._btnOpen">
-<summary>
-btnOpen control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm1._btnpdf">
-<summary>
-btnpdf control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm1._HyperLink1">
-<summary>
-HyperLink1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm1._LinkButton1">
-<summary>
-LinkButton1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
 <member name="F:connection.WebForm10._btnLogout">
 <summary>
 btnLogout control.
@@ -946,9 +757,36 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:connection.WebForm11._btnLogout">
+<summary>
+btnLogout control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:connection.WebForm11._btnview">
 <summary>
 btnview control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.WebForm11._btndownload">
+<summary>
+btndownload control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.WebForm11._lblalert">
+<summary>
+lblalert control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -967,6 +805,15 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:connection.WebForm11._DropDownList1">
 <summary>
 DropDownList1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.WebForm11._FileUpload1">
+<summary>
+FileUpload1 control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -1108,78 +955,6 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:connection.WebForm4._form1">
-<summary>
-form1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm4._lblsearch">
-<summary>
-lblsearch control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm4._txtsearch">
-<summary>
-txtsearch control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm4._btnsearch">
-<summary>
-btnsearch control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm4._gvCustomers">
-<summary>
-gvCustomers control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm4._HyperLink1">
-<summary>
-HyperLink1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm4._Label1">
-<summary>
-Label1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm4._Label2">
-<summary>
-Label2 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
 <member name="F:connection.WebForm5._form1">
 <summary>
 form1 control.
@@ -1243,6 +1018,24 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:connection.WebForm6._lblalert">
+<summary>
+lblalert control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.WebForm6._lblalert4">
+<summary>
+lblalert4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:connection.WebForm6._Label1">
 <summary>
 Label1 control.
@@ -1300,6 +1093,15 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:connection.WebForm6._btnsearch2">
 <summary>
 btnsearch2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.WebForm6._lblalert1">
+<summary>
+lblalert1 control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -1396,99 +1198,27 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:connection.WebForm6._lblalert2">
+<summary>
+lblalert2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.WebForm6._lblalert3">
+<summary>
+lblalert3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:connection.WebForm6._btnUploadnSend">
 <summary>
 btnUploadnSend control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm7._Label1">
-<summary>
-Label1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm7._txtUsername">
-<summary>
-txtUsername control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm7._Label2">
-<summary>
-Label2 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm7._txtPassword">
-<summary>
-txtPassword control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm7._Label3">
-<summary>
-Label3 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm7._txtFullname">
-<summary>
-txtFullname control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm7._Label4">
-<summary>
-Label4 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm7._txtEmailaddress">
-<summary>
-txtEmailaddress control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm7._Label5">
-<summary>
-Label5 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.WebForm7._Button1">
-<summary>
-Button1 control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -1531,15 +1261,6 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:connection.WebForm8._HyperLink1">
-<summary>
-HyperLink1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
 <member name="F:connection.WebForm9._form1">
 <summary>
 form1 control.
@@ -1568,6 +1289,24 @@ To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:connection.WebForm9._Label1">
+<summary>
+Label1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.webrestric._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:connection.webrestric._Label1">
 <summary>
 Label1 control.
 </summary>

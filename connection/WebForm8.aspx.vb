@@ -1,5 +1,4 @@
-﻿Imports System.IO
-Imports System.Net
+﻿Imports System.Net
 Imports MySql.Data.MySqlClient
 
 Public Class WebForm8
@@ -21,7 +20,7 @@ Public Class WebForm8
         Dim query As String
 
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost'; port='3306'; username='root'; password='powerhouse'; database='eforms'")
+        connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
         query = ("SELECT tblform_masterlist.formTitle, tblapprovalrequest.formControlnum, tblapprovalrequest.filename, tblapprovalrequest.applicableSpecs ,tblapprovalrequest.requestorName, tblapprovalrequest.requestorDepartment,  tblapprovalrequest.requestStatus, tblapprovalrequest.requestDate, tblapprovalrequest.approvDate FROM tblform_masterlist INNER JOIN tblapprovalrequest ON tblform_masterlist.formControlnum = tblapprovalrequest.formControlnum;")
 
@@ -36,7 +35,7 @@ Public Class WebForm8
                 GridView1.DataBind()
             End Using
         Catch ex As Exception
-            MsgBox("for update")
+            'MsgBox("for update")
         End Try
 
 
@@ -60,10 +59,10 @@ Public Class WebForm8
         search = txtSearch.Value
 
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost'; port='3306'; username='root'; password='powerhouse'; database='eforms'")
+        connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
 
-        query = ("SELECT tblform_masterlist.formTitle, tblapprovalrequest.formControlnum, tblapprovalrequest.filename, tblapprovalrequest.applicableSpecs ,tblapprovalrequest.requestorName, tblapprovalrequest.requestorDepartment,  tblapprovalrequest.requestStatus, tblapprovalrequest.requestDate, tblapprovalrequest.approvDate FROM tblform_masterlist INNER JOIN tblapprovalrequest ON tblform_masterlist.formControlnum = tblapprovalrequest.formControlnum WHERE tblapprovalrequest.formControlnum = '" & search & "' OR tblapprovalrequest.appplicableSpecs = '" & search & "'")
+        query = ("SELECT tblform_masterlist.formTitle, tblapprovalrequest.formControlnum, tblapprovalrequest.filename, tblapprovalrequest.applicableSpecs ,tblapprovalrequest.requestorName, tblapprovalrequest.requestorDepartment,  tblapprovalrequest.requestStatus, tblapprovalrequest.requestDate, tblapprovalrequest.approvDate FROM tblform_masterlist INNER JOIN tblapprovalrequest ON tblform_masterlist.formControlnum = tblapprovalrequest.formControlnum WHERE tblapprovalrequest.formControlnum = '" & search & "' OR tblapprovalrequest.applicableSpecs = '" & search & "'")
 
         command = New MySqlCommand(query, connection)
         connection.Open()
@@ -92,7 +91,7 @@ Public Class WebForm8
 
         ''create a connection to database
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost'; port='3306'; username='root'; password='powerhouse'; database='eforms'")
+        connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
 
         ''MySql query that select the file based on the formtitle And applicable specifications
@@ -112,7 +111,7 @@ Public Class WebForm8
 
         ''open din pdf kaso napapatungan si system-----------------------------------------------------------------------------------------
 
-        Dim path As String = "C:\Users\romer.legaspi\Desktop\pdf_files\pdf_file_for_approval\" + filename
+        Dim path As String = "D:\Forms\Approval\" + filename
         Dim client As New WebClient()
         Dim buffer As [Byte]() = client.DownloadData(path)
 

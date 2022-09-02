@@ -1,7 +1,4 @@
 ﻿Imports MySql.Data.MySqlClient
-Imports System.Net
-
-
 Public Class DIC1
     Inherits System.Web.UI.Page
 
@@ -24,23 +21,23 @@ Public Class DIC1
         Dim query As String
 
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost'; port='3306'; username='root'; password='powerhouse'; database='eforms'")
+        connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
         query = ("SELECT tblform_masterlist.formTitle, tblapprovalrequest.formControlnum, tblapprovalrequest.filename, tblapprovalrequest.applicableSpecs ,tblapprovalrequest.requestorName, tblapprovalrequest.requestorDepartment,  tblapprovalrequest.requestStatus, tblapprovalrequest.requestDate, tblapprovalrequest.approvDate FROM tblform_masterlist INNER JOIN tblapprovalrequest ON tblform_masterlist.formControlnum = tblapprovalrequest.formControlnum;")
 
         command = New MySqlCommand(query, connection)
         connection.Open()
 
-        Try
-            Using sda As New MySqlDataAdapter(command)
+        ' Try
+        Using sda As New MySqlDataAdapter(command)
                 Dim dt As New DataTable()
                 sda.Fill(dt)
                 GridView1.DataSource = dt
                 GridView1.DataBind()
             End Using
-        Catch ex As Exception
-            MsgBox("for update")
-        End Try
+        '  Catch ex As Exception
+        ' MsgBox("for update")
+        ' End Try
 
 
         connection.Close()
@@ -62,7 +59,7 @@ Public Class DIC1
         search = txtSearch.Value
 
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost'; port='3306'; username='root'; password='powerhouse'; database='eforms'")
+        connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
 
         query = ("SELECT tblform_masterlist.formTitle, tblapprovalrequest.formControlnum, tblapprovalrequest.filename, tblapprovalrequest.applicableSpecs ,tblapprovalrequest.requestorName, tblapprovalrequest.requestorDepartment,  tblapprovalrequest.requestStatus, tblapprovalrequest.requestDate, tblapprovalrequest.approvDate FROM tblform_masterlist INNER JOIN tblapprovalrequest ON tblform_masterlist.formControlnum = tblapprovalrequest.formControlnum WHERE tblapprovalrequest.formControlnum = '" & search & "' OR tblapprovalrequest.applicableSpecs = '" & search & "'")
@@ -94,7 +91,7 @@ Public Class DIC1
 
         'create a connection to database
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost'; port='3306'; username='root'; password='powerhouse'; database='eforms'")
+        connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
 
         'MySql query that select the file based on the formtitle And applicable specifications

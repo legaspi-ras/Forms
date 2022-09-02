@@ -1,5 +1,4 @@
 ﻿Imports MySql.Data.MySqlClient
-Imports System.Web
 
 Public Class WebForm10
     Inherits System.Web.UI.Page
@@ -8,6 +7,8 @@ Public Class WebForm10
     Dim command As MySqlCommand
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        Application("docstatus") = "active"
 
         lblEmpname.Text = HttpContext.Current.Session(“empname”)
 
@@ -24,7 +25,7 @@ Public Class WebForm10
         Dim query As String
 
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost'; port='3306'; username='root'; password='powerhouse'; database='eforms'")
+        connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
         query = ("SELECT tblform_masterlist.formTitle, tblapprovalrequest.formControlnum, tblapprovalrequest.filename, tblapprovalrequest.applicableSpecs ,tblapprovalrequest.requestorName, tblapprovalrequest.requestorDepartment,  tblapprovalrequest.requestStatus, tblapprovalrequest.requestDate, tblapprovalrequest.approvDate FROM tblform_masterlist INNER JOIN tblapprovalrequest ON tblform_masterlist.formControlnum = tblapprovalrequest.formControlnum;")
 
@@ -39,7 +40,7 @@ Public Class WebForm10
                 GridView1.DataBind()
             End Using
         Catch ex As Exception
-            MsgBox("for update")
+            'MsgBox("for update")
         End Try
 
 
@@ -63,7 +64,7 @@ Public Class WebForm10
         search = txtSearch.Value
 
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost'; port='3306'; username='root'; password='powerhouse'; database='eforms'")
+        connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
 
         query = ("SELECT tblform_masterlist.formTitle, tblapprovalrequest.formControlnum, tblapprovalrequest.filename, tblapprovalrequest.applicableSpecs ,tblapprovalrequest.requestorName, tblapprovalrequest.requestorDepartment,  tblapprovalrequest.requestStatus, tblapprovalrequest.requestDate, tblapprovalrequest.approvDate FROM tblform_masterlist INNER JOIN tblapprovalrequest ON tblform_masterlist.formControlnum = tblapprovalrequest.formControlnum WHERE tblapprovalrequest.formControlnum = '" & search & "' OR tblapprovalrequest.applicableSpecs = '" & search & "'")
@@ -95,7 +96,7 @@ Public Class WebForm10
 
         ''create a connection to database
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost'; port='3306'; username='root'; password='powerhouse'; database='eforms'")
+        connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
 
         ''MySql query that select the file based on the formtitle And applicable specifications
@@ -114,33 +115,35 @@ Public Class WebForm10
 
         filename = reader(2) 'getting the filename of the form
 
+        HttpContext.Current.Session(“requestor”) = GridView1.SelectedRow.Cells(3).Text
         HttpContext.Current.Session(“formdepartment”) = GridView1.SelectedRow.Cells(4).Text
         HttpContext.Current.Session(“formctrlnum”) = GridView1.SelectedRow.Cells(1).Text
         HttpContext.Current.Session(“formtitle”) = GridView1.SelectedRow.Cells(0).Text
         HttpContext.Current.Session(“appspecs”) = GridView1.SelectedRow.Cells(2).Text
         HttpContext.Current.Session(“filename”) = filename
-        HttpContext.Current.Session("documentStatus") = ""
 
         reader.Close()
         connection.Close()
 
-        Response.Redirect("WebForm11.aspx")
+        Response.Redirect("webrestric.aspx")
 
     End Sub
 
     Protected Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
-
 
         empuser.Text = HttpContext.Current.Session(“empId”)
 
         Dim query As String
         Dim logstatus As String
         Dim usernow As String
+        Dim empid As String
+
+        empid = HttpContext.Current.Session(“empId”)
 
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost'; port='3306'; username='root'; password='powerhouse'; database='eforms'")
+        connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
-        query = ("SELECT * FROM tblloginhistory ORDER BY id DESC LIMIT 1")
+        query = ("SELECT * FROM tblloginhistory WHERE empid ='" & empid & "' AND logstatus = 'Login'")
 
         command = New MySqlCommand(query, connection)
         connection.Open()
@@ -171,8 +174,15 @@ Public Class WebForm10
             connection.Close()
 
 
-            '' call niya na dito yung next window tab na for viewing for approval
-            Response.Redirect("Login.aspx")
+        '' call niya na dito yung next window tab na for viewing for approval
+
+        HttpContext.Current.Session.Remove(“empId”)
+        Session.RemoveAll()
+        Session.Clear()
+        Session.Abandon()
+
+        Response.Redirect("Login.aspx")
+
 
 
     End Sub

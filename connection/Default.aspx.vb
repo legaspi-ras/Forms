@@ -1,6 +1,4 @@
-﻿Imports System.IO
-Imports System.Net
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 
 Public Class _Default
     Inherits Page
@@ -23,7 +21,7 @@ Public Class _Default
         Dim query As String
 
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost'; port='3306'; username='root'; password='powerhouse'; database='eforms'")
+        connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
         query = ("SELECT formControlnum, formTitle FROM tblform_masterlist")
 
@@ -48,7 +46,7 @@ Public Class _Default
 
         Else
 
-            MsgBox("Sorry, I cant load the data because your database table named masterlist is empty.")
+            ' MsgBox("Sorry, I cant load the data because your database table named masterlist is empty.")
 
         End If
 
@@ -74,7 +72,7 @@ Public Class _Default
         frmsearch = txtsearch.Value
 
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost'; port='3306'; username='root'; password='powerhouse'; database='eforms'")
+        connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
 
         query = ("SELECT * FROM tblform_masterlist WHERE formControlnum LIKE '" & frmsearch & "%' OR formTitle LIKE '" & frmsearch & "%' ")
@@ -98,7 +96,7 @@ Public Class _Default
 
         Else
 
-            MsgBox("Sorry, the e-form that your looking for is not available.")
+            ' MsgBox("Sorry, the e-form that your looking for is not available.")
 
         End If
 
@@ -117,7 +115,7 @@ Public Class _Default
 
         ''create a connection to database
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost'; port='3306'; username='root'; password='powerhouse'; database='eforms'")
+        connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
         'mysql query that select the file based on the formtitle and formctrlnum specifications
         Dim query As String
@@ -146,7 +144,7 @@ Public Class _Default
             Response.ClearHeaders()
             Response.ContentType = ContentType
             Response.AppendHeader("Content-Disposition", "attachment; filename=" + filename)
-            Response.TransmitFile("C:\Users\romer.legaspi\Desktop\pdf_files\pdf_forms\" + filename) 'ito yung pag download ng file 
+            Response.TransmitFile("D:\Forms\Template\" + filename) 'ito yung pag download ng file 
             Response.BinaryWrite(bytes)
             Response.Flush()
             Response.Close()
@@ -156,7 +154,7 @@ Public Class _Default
 
         Else
 
-            MsgBox("Uh-oh, you got a missing pdf file.")
+            ' MsgBox("Uh-oh, you got a missing pdf file.")
 
         End If
 

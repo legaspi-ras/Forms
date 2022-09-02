@@ -194,6 +194,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="adminupload.aspx" />
+    <Content Include="back.aspx" />
     <Content Include="bootstrap\css\bootstrap-grid.css" />
     <Content Include="bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="bootstrap\css\bootstrap-grid.rtl.css" />
@@ -252,14 +253,10 @@
     <Content Include="Scripts\pdf.sandbox.js" />
     <Content Include="Scripts\pdf.worker.js" />
     <Content Include="Scripts\WebForm2.aspx" />
-    <Content Include="viewnewtab.aspx" />
-    <Content Include="WebForm1.aspx" />
     <Content Include="WebForm10.aspx" />
     <Content Include="WebForm11.aspx" />
-    <Content Include="WebForm4.aspx" />
     <Content Include="WebForm5.aspx" />
     <Content Include="WebForm6.aspx" />
-    <Content Include="WebForm7.aspx" />
     <Content Include="WebForm8.aspx" />
     <Content Include="WebForm9.aspx" />
     <Content Include="bootstrap\css\bootstrap-grid.css.map" />
@@ -289,6 +286,7 @@
     <Content Include="bootstrap\js\pdf.worker.js.map" />
     <Content Include="Approver.Master" />
     <Content Include="DIC.Master" />
+    <Content Include="webrestric.aspx" />
     <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />
     <None Include="My Project\PublishProfiles\IISProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -345,6 +343,13 @@
     </Compile>
     <Compile Include="About.aspx.vb">
       <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="back.aspx.designer.vb">
+      <DependentUpon>back.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="back.aspx.vb">
+      <DependentUpon>back.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Contact.aspx.designer.vb">
@@ -418,13 +423,6 @@
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="viewnewtab.aspx.designer.vb">
-      <DependentUpon>viewnewtab.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="viewnewtab.aspx.vb">
-      <DependentUpon>viewnewtab.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="ViewSwitcher.ascx.vb">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -439,13 +437,6 @@
     <Compile Include="Site.Mobile.Master.designer.vb">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.designer.vb">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm1.aspx.vb">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="WebForm10.aspx.designer.vb">
       <DependentUpon>WebForm10.aspx</DependentUpon>
     </Compile>
@@ -458,13 +449,6 @@
     </Compile>
     <Compile Include="WebForm11.aspx.vb">
       <DependentUpon>WebForm11.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="WebForm4.aspx.designer.vb">
-      <DependentUpon>WebForm4.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm4.aspx.vb">
-      <DependentUpon>WebForm4.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="WebForm5.aspx.designer.vb">
@@ -481,13 +465,6 @@
       <DependentUpon>WebForm6.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="WebForm7.aspx.designer.vb">
-      <DependentUpon>WebForm7.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm7.aspx.vb">
-      <DependentUpon>WebForm7.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="WebForm8.aspx.designer.vb">
       <DependentUpon>WebForm8.aspx</DependentUpon>
     </Compile>
@@ -500,6 +477,13 @@
     </Compile>
     <Compile Include="WebForm9.aspx.vb">
       <DependentUpon>WebForm9.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="webrestric.aspx.designer.vb">
+      <DependentUpon>webrestric.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webrestric.aspx.vb">
+      <DependentUpon>webrestric.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>

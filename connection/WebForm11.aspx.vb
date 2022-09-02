@@ -1,6 +1,5 @@
 ﻿Imports System.IO
 Imports MySql.Data.MySqlClient
-Imports System.Web
 Imports System.Net
 Public Class WebForm11
     Inherits System.Web.UI.Page
@@ -8,51 +7,142 @@ Public Class WebForm11
     Dim connection As MySqlConnection
     Dim command As MySqlCommand
 
-
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        If HttpContext.Current.Session("documentStatus") = "Active" Then
 
-            MsgBox("Sorry. The document is currently updating by the other approver. Try again later.")
-            Response.Redirect("WebForm10.aspx")
+        ' start restriction-----------------------------------------------------------------------
 
-        Else
-
-            Dim query As String
-            Dim search As String
-
-            search = lblRequestor.Text
-
-            connection = New MySqlConnection
-            connection.ConnectionString = ("server='localhost'; port='3306'; username='root'; password='powerhouse'; database='eforms'")
+        'Dim query As String
+        'Dim empid As String
+        'Dim appspecs As String
+        'Dim pdffilename As String
+        'Dim docstatus As String
 
 
-            query = ("SELECT EMP_NAME, DEPARTMENT FROM emp_masterlist WHERE EMP_NO = '" & HttpContext.Current.Session(“empId”) & "'") '' approver side na tayo kaya yung yung empId ay kay approver
+        'appspecs = HttpContext.Current.Session(“appspecs”)
+        'empid = HttpContext.Current.Session(“empid”)
 
-            command = New MySqlCommand(query, connection)
-            connection.Open()
+        'connection = New MySqlConnection
+        'connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
-            Dim reader As MySqlDataReader
-            reader = command.ExecuteReader()
-            reader.Read()
+        'query = ("SELECT * FROM tblloginhistory WHERE empId = '" & empid & "' AND logstatus = 'Login'")
 
-            Dim empdept As String
+        'command = New MySqlCommand(query, connection)
+        'connection.Open()
 
-            empdept = reader(1)
+        'Dim reader As MySqlDataReader
+        'reader = command.ExecuteReader()
+        'reader.Read()
 
-            reader.Close()
-            connection.Close()
+        'pdffilename = reader(5)
+        'docstatus = reader(2)
 
-            lblRequestor.Text = HttpContext.Current.Session(“empname”)
-            lblRequestordept.Text = empdept
-            lblFormctrlnum.Text = HttpContext.Current.Session(“formctrlnum”)
-            lblFormtitle.Text = HttpContext.Current.Session(“formtitle”)
-            lblAppsspecs.Text = HttpContext.Current.Session(“appspecs”)
-            lblFormdept.Text = HttpContext.Current.Session(“formdepartment”)
+        'If reader.HasRows Then
 
-            ' btnupdate.Enabled = False
+        '    reader.Close()
+        '    connection.Close()
 
-        End If
+        '    If docstatus = "Login" And pdffilename = appspecs Then
+
+        '        Response.Write("<script> alert(" & "sorry someone is using the file" & ")")
+        '        Response.Redirect("WebForm10.aspx")
+
+        '    Else
+        '        Response.Write("<script> alert(" & "sorry someone is using the file" & ") <script>")
+        '        'update loginhistory - status -------------------------------------
+        '        query = ("UPDATE tblloginhistory SET applicableSpecs = '" & HttpContext.Current.Session(“appspecs”) & "', formControlnum = '" & HttpContext.Current.Session(“formctrlnum”) & "' WHERE empId = '" & HttpContext.Current.Session(“empId”) & "' AND logStatus = 'Login'")
+
+        '        command = New MySqlCommand(query, connection)
+        '        connection.Open()
+
+        '        reader = command.ExecuteReader()
+        '        reader.Read()
+
+        '        reader.Close()
+        '        connection.Close()
+        '        ' end update --------------------------------------------------------
+
+        lblRequestor.Text = HttpContext.Current.Session(“requestor”)
+        lblFormctrlnum.Text = HttpContext.Current.Session(“formctrlnum”)
+        lblFormtitle.Text = HttpContext.Current.Session(“formtitle”)
+        lblAppsspecs.Text = HttpContext.Current.Session(“appspecs”)
+        lblFormdept.Text = HttpContext.Current.Session(“formdepartment”)
+
+        '    End If
+        '    '    'update loginhistory - status -------------------------------------
+        '    '    query = ("UPDATE tblloginhistory SET applicableSpecs = '" & HttpContext.Current.Session(“appspecs”) & "', formControlnum = '" & HttpContext.Current.Session(“formctrlnum”) & "' WHERE empId = '" & HttpContext.Current.Session(“empId”) & "' AND logStatus = 'Login'")
+
+        '    '    command = New MySqlCommand(query, connection)
+        '    '    connection.Open()
+
+        '    '    reader = command.ExecuteReader()
+        '    '    reader.Read()
+
+        '    '    reader.Close()
+        '    '    connection.Close()
+        '    '    ' end update --------------------------------------------------------
+
+        '    '    lblRequestor.Text = HttpContext.Current.Session(“requestor”)
+        '    '    lblFormctrlnum.Text = HttpContext.Current.Session(“formctrlnum”)
+        '    '    lblFormtitle.Text = HttpContext.Current.Session(“formtitle”)
+        '    '    lblAppsspecs.Text = HttpContext.Current.Session(“appspecs”)
+        '    '    lblFormdept.Text = HttpContext.Current.Session(“formdepartment”)
+        'Else
+        '    reader.Close()
+        '    connection.Close()
+        '    Response.Redirect("WebForm10.aspx")
+
+        'End If
+
+        'reader.Close()
+        'connection.Close()
+
+        ' end restriction ------------------------------
+
+        'If HttpContext.Current.Session("documentStatus") = "Active" Then
+
+        '    ' MsgBox("Sorry. The document is currently updating by the other approver. Try again later.")
+        '    Response.Redirect("WebForm10.aspx")
+
+        'Else
+        '    HttpContext.Current.Session("documentStatus") = "Active"
+
+        '    'Dim query As String
+        '    'Dim search As String
+
+        '    'search = lblRequestor.Text
+
+        '    'connection = New MySqlConnection
+        '    'connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
+
+
+        '    'query = ("SELECT EMP_NAME, DEPARTMENT FROM emp_masterlist WHERE EMP_NO = '" & HttpContext.Current.Session(“empId”) & "'") '' approver side na tayo kaya yung yung empId ay kay approver
+
+        '    'command = New MySqlCommand(query, connection)
+        '    'connection.Open()
+
+        '    'Dim reader As MySqlDataReader
+        '    'reader = command.ExecuteReader()
+        '    'reader.Read()
+
+        '    'Dim empdept As String
+
+        '    'empdept = reader(1)
+
+        '    'reader.Close()
+        '    'connection.Close()
+
+        '    lblRequestor.Text = HttpContext.Current.Session(“requestor”)
+        '    'lblRequestordept.Text = empdept 'baka tanggalin na to dahil hindi naman kailangan
+        '    lblFormctrlnum.Text = HttpContext.Current.Session(“formctrlnum”)
+        '    lblFormtitle.Text = HttpContext.Current.Session(“formtitle”)
+        '    lblAppsspecs.Text = HttpContext.Current.Session(“appspecs”)
+        '    lblFormdept.Text = HttpContext.Current.Session(“formdepartment”)
+
+        '    ' btnupdate.Enabled = False
+
+
+        'End If
 
 
     End Sub
@@ -75,7 +165,7 @@ Public Class WebForm11
         Response.ClearHeaders()
         Response.ContentType = ContentType
         Response.AppendHeader("Content-Disposition", "attachment; filename=" + filename)
-        Response.TransmitFile("C:\Users\romer.legaspi\Desktop\pdf_files\pdf_file_for_approval\" + filename)
+        Response.TransmitFile("D:\Forms\Approval\" + filename)
         Response.Flush()
         Response.Close()
         Response.End()
@@ -99,7 +189,7 @@ Public Class WebForm11
             Dim pdfSavingStatus As String
             pdfSavingStatus = "failed"
 
-            directory = ("C:\Users\romer.legaspi\Desktop\pdf_files\pdf_file_for_approval\" + savefilename) ' gagawa ng validation para malaman kung tamang ang file name na kailangan i submit lalo na pag mga signatory na ang gagawa
+            directory = ("D:\Forms\Approval\" + savefilename) ' gagawa ng validation para malaman kung tamang ang file name na kailangan i submit lalo na pag mga signatory na ang gagawa
 
 
             If contentType = "application/pdf" Then '  <---- check kung PDF file ang document
@@ -117,14 +207,14 @@ Public Class WebForm11
                     Using fs As Stream = FileUpload1.PostedFile.InputStream
 
                         ' save niya sa folder na for approval 
-                        FileUpload1.SaveAs("C:\Users\romer.legaspi\Desktop\pdf_files\pdf_file_for_approval\" + savefilename)
+                        FileUpload1.SaveAs("D:\Forms\Approval\" + savefilename)
 
                     End Using
 
                     Dim query As String
 
                     connection = New MySqlConnection
-                    connection.ConnectionString = ("server='localhost'; port='3306'; username='root'; password='powerhouse'; database='eforms'")
+                    connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
                     query = ("UPDATE tblapprovalrequest SET requestStatus = '" & DropDownList1.SelectedItem.Value & "' WHERE applicableSpecs = '" & lblAppsspecs.Text & "'")
 
@@ -138,6 +228,7 @@ Public Class WebForm11
                     reader.Close()
                     connection.Close()
 
+                    lblalert.Visible = True
                     '' condition kapag nag approve ang value ni dropdownlsit
 
                     If DropDownList1.SelectedItem.Value = "Approve" Then
@@ -146,7 +237,7 @@ Public Class WebForm11
                         approvdate = Today.ToString("yyyy-MM-dd")
 
                         connection = New MySqlConnection
-                        connection.ConnectionString = ("server='localhost'; port='3306'; username='root'; password='powerhouse'; database='eforms'")
+                        connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
                         query = ("UPDATE tblapprovalrequest SET requestStatus = '" & DropDownList1.SelectedItem.Value & "', approvDate = '" & approvdate & "' WHERE applicableSpecs = '" & lblAppsspecs.Text & "'")
 
@@ -175,7 +266,7 @@ Public Class WebForm11
             Dim query As String
 
             connection = New MySqlConnection
-            connection.ConnectionString = ("server='localhost'; port='3306'; username='root'; password='powerhouse'; database='eforms'")
+            connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
             query = ("UPDATE tblapprovalrequest SET requestStatus = '" & DropDownList1.SelectedItem.Value & "' WHERE applicableSpecs = '" & lblAppsspecs.Text & "'")
 
@@ -202,7 +293,7 @@ Public Class WebForm11
         Dim usernow As String
 
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost'; port='3306'; username='root'; password='powerhouse'; database='eforms'")
+        connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
         query = ("SELECT * FROM tblloginhistory ORDER BY id DESC LIMIT 1")
 
@@ -222,8 +313,7 @@ Public Class WebForm11
         Dim logoutdatentime = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
 
 
-        query = ("UPDATE tblloginhistory SET logstatus = 'Logout', applicableSpecs = '" & HttpContext.Current.Session(“appspecs”) & "', formControlnum = '" & HttpContext.Current.Session(“formctrlnum”) & "' , logoutDatentime = '" & logoutdatentime & "' WHERE empId = '" & HttpContext.Current.Session(“empId”) & "' AND logStatus = 'Login'")
-
+        query = ("UPDATE tblloginhistory SET logstatus = 'Logout', applicableSpecs = '" & HttpContext.Current.Session(“appspecs”) & "', formControlnum = '" & HttpContext.Current.Session(“formctrlnum”) & "' , logoutDatentime = '" & logoutdatentime & "', docStatus = 'Inactive' WHERE empId = '" & HttpContext.Current.Session(“empId”) & "' AND logStatus = 'Login'")
 
         command = New MySqlCommand(query, connection)
         connection.Open()
@@ -234,8 +324,8 @@ Public Class WebForm11
         reader.Close()
         connection.Close()
 
+        HttpContext.Current.Session("documentStatus") = ""
         Response.Redirect("Login.aspx")
-
 
     End Sub
 
@@ -247,7 +337,7 @@ Public Class WebForm11
 
         ''create a connection to database
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost'; port='3306'; username='root'; password='powerhouse'; database='eforms'")
+        connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
 
         ''MySql query that select the file based on the formtitle And applicable specifications
@@ -264,7 +354,7 @@ Public Class WebForm11
 
         ''open din pdf kaso napapatungan si system kaya nag lagay ng javascript para ma open sa nex window-----------------------------------------------------------------------------------------
 
-        Dim path As String = "C:\Users\romer.legaspi\Desktop\pdf_files\pdf_file_for_approval\" + filename
+        Dim path As String = "D:\Forms\Approval\" + filename
         Dim client As New WebClient()
         Dim buffer As [Byte]() = client.DownloadData(path)
 

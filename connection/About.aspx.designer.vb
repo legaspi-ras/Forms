@@ -32,15 +32,6 @@ Partial Public Class About
     Protected WithEvents ddlDepartment As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''SqlDataSource2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents SqlDataSource2 As Global.System.Web.UI.WebControls.SqlDataSource
-
-    '''<summary>
     '''Label8 control.
     '''</summary>
     '''<remarks>

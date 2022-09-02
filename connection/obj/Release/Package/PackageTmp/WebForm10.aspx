@@ -4,7 +4,7 @@
 
        <br />
        <asp:Button class="btn btn-primary" ID="btnLogout" runat="server" Text="Logout" Width="89px" />
-       <asp:Label ID="empuser" runat="server" Text="Label"></asp:Label> <br />
+       <asp:Label ID="empuser" runat="server" Text="Label" Visible="False"></asp:Label> <br />
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       
        <h6>Welcome, <asp:Label ID="lblEmpname" runat="server" Text="Label"></asp:Label> </h6> 
@@ -39,6 +39,7 @@
                     <asp:BoundField DataField="requestorDepartment" HeaderText="Department" SortExpression="requestorDepartment" />
                     <asp:BoundField DataField="requestStatus" HeaderText="Status" SortExpression="requestStatus" />
                     <asp:BoundField DataField="requestDate" DataFormatString="&quot;{0:d}&quot;" HeaderText="Request Date" SortExpression="requestDate" />
+                    <asp:BoundField DataField="approvDate" DataFormatString="&quot;{0:d}&quot;" HeaderText="Approve Date" SortExpression="approvDate" />
                     <asp:TemplateField HeaderText="Action">
                         <ItemTemplate>
                             <asp:Button ID="Button1" runat="server" class="btn btn-primary" CausesValidation="false" CommandName="Select" Text="Update" />
@@ -53,19 +54,6 @@
                 </div>
 
                </div>
-
-        <%--   <div class ="col">
-
-                <div class="card" >
-                    <div class="card-body">
-                        <h5 class="card-title">View File</h5>        
-                                                    
-                        <asp:HyperLink ID="HyperLink1" runat="server">Your selected pdf file will appear here.</asp:HyperLink>
-
-                    </div>
-                </div>
-
-           </div>--%>
 
         </div>
 

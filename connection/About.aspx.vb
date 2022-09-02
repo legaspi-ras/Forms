@@ -34,14 +34,14 @@ Public Class About
         Dim directory As String
         Dim contentType As String
         contentType = FileUpload1.PostedFile.ContentType
-        directory = Server.MapPath("~/pdf_files/" + filename) '' babaguhin ang path
+        directory = "D:\Forms\Template\" + filename '' babaguhin ang path
 
         '  Label6.Text = directory for validation lang ito
         If contentType = "application/pdf" Then
 
             If File.Exists(directory) Then
 
-                MsgBox("Oops! I'm sorry. The form your trying to add is already available. ")
+                '  MsgBox("Oops! I'm sorry. The form your trying to add is already available. ")
 
             ElseIf (FileUpload1.HasFile) Then
 
@@ -61,7 +61,7 @@ Public Class About
                         Dim query As String
 
                         connection = New MySqlConnection
-                        connection.ConnectionString = ("server='localhost'; port='3306'; username='root'; password='powerhouse'; database='eforms'")
+                        connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
                         query = ("INSERT INTO tblform_masterlist (departmentArea, formControlnum, formTitle, revisionNum, pdfFilename, contentType, pdfData) VALUES ('" & deptarea & "', '" & formctrlnum & "', '" & frmtitle & "', '" & revnum & "', '" & filename & "', '" & contentType & "', '" & pdfbytes(0) & "')")
 
@@ -72,7 +72,7 @@ Public Class About
                         reader = command.ExecuteReader()
                         reader.Read()
 
-                        FileUpload1.SaveAs(Server.MapPath("~/pdf_files/" + filename))
+                        FileUpload1.SaveAs("D:\Forms\Template\" + filename)
 
                         reader.Close()
                         connection.Close()
@@ -80,7 +80,7 @@ Public Class About
                 End Using
 
 
-                MsgBox(frmtitle + " succesfully uploaded from the system.")
+                ' MsgBox(frmtitle + " succesfully uploaded from the system.")
 
                 Response.Redirect(Request.Url.AbsoluteUri)
 
@@ -88,13 +88,13 @@ Public Class About
 
             Else
 
-                MsgBox("Please select the PDF file for upload.")
+                ' MsgBox("Please select the PDF file for upload.")
 
             End If
 
         Else
 
-            MsgBox("Please select the PDF file for upload.")
+            ' MsgBox("Please select the PDF file for upload.")
 
         End If
 

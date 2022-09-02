@@ -30,7 +30,7 @@ Public Class adminupload
 
         ''create a connection to database
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost'; port='3306'; username='root'; password='powerhouse'; database='eforms'")
+        connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
 
         ''MySql query that select the file based on the formtitle And applicable specifications
@@ -47,7 +47,7 @@ Public Class adminupload
 
         ''open din pdf kaso napapatungan si system kaya nag lagay ng javascript para ma open sa nex window-----------------------------------------------------------------------------------------
 
-        Dim path As String = "C:\Users\romer.legaspi\Desktop\pdf_files\pdf_file_for_approval\" + filename
+        Dim path As String = "D:\Forms\Approval\" + filename
         Dim client As New WebClient()
         Dim buffer As [Byte]() = client.DownloadData(path)
 
@@ -82,7 +82,7 @@ Public Class adminupload
         Response.ClearHeaders()
         Response.ContentType = ContentType
         Response.AppendHeader("Content-Disposition", "attachment; filename=" + filename)
-        Response.TransmitFile("C:\Users\romer.legaspi\Desktop\pdf_files\pdf_file_for_approval\" + filename)
+        Response.TransmitFile("D:\Forms\Approval\" + filename)
         Response.Flush()
         Response.Close()
         Response.End()
@@ -104,7 +104,7 @@ Public Class adminupload
             Dim pdfSavingStatus As String
             pdfSavingStatus = "failed"
 
-            directory = ("C:\Users\romer.legaspi\Desktop\pdf_files\pdf_file_for_approval\" + savefilename) ' gagawa ng validation para malaman kung tamang ang file name na kailangan i submit lalo na pag mga signatory na ang gagawa
+            directory = ("D:\Forms\Approval\" + savefilename) ' gagawa ng validation para malaman kung tamang ang file name na kailangan i submit lalo na pag mga signatory na ang gagawa
 
 
             If contentType = "application/pdf" Then '  <---- check kung PDF file ang document
@@ -122,7 +122,7 @@ Public Class adminupload
                     Using fs As Stream = FileUpload1.PostedFile.InputStream
 
                         ' save niya sa folder na for approval 
-                        FileUpload1.SaveAs("C:\Users\romer.legaspi\Desktop\pdf_files\pdf_file_for_approval\" + savefilename)
+                        FileUpload1.SaveAs("D:\Forms\Approval\" + savefilename)
 
                     End Using
 
@@ -136,11 +136,11 @@ Public Class adminupload
                     Select Case deptarea
                         Case "MIS"
 
-                            FileUpload1.SaveAs("C:\Users\romer.legaspi\Desktop\pdf_files\MIS\" + savefilename)
+                            FileUpload1.SaveAs("D:\Forms\Final\mis\" + savefilename)
 
                         Case "Security"
 
-                            FileUpload1.SaveAs("C:\Users\romer.legaspi\Desktop\pdf_files\Security\" + savefilename)
+                            FileUpload1.SaveAs("D:\Forms\Final\security\" + savefilename)
 
                         Case Else
 

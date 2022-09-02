@@ -2,6 +2,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <br />
+    <script type="text/javascript">
+        function Set1() {
+            document.forms[0].target = "_self";
+        }
+    </script>
+       <asp:Button class="btn btn-primary" ID="btnLogout" runat="server" OnClientClick="Set1();" Text="Logout" Width="89px" />
+    <br /> <br />
              <div class ="col">
 
                 <div class="card" >
@@ -12,10 +19,23 @@
                                     <h5 class="card-title">Update e-Form</h5> 
                                 </td>
                                 <td>
-                                                      
-                                    &nbsp;&nbsp; &nbsp;</td>
+                                         
+                                    &nbsp;&nbsp; &nbsp;
+
+                                </td>
+                                 <td>
+                                                                                     <script type="text/javascript">
+                                                                                         function SetTarget() {
+                                                                                             document.forms[0].target = "_blank";                                                                                        
+                                                                                         }
+                                                                                     </script>
+                                    <asp:Button ID="btnview" runat="server" OnClick="btnview_Click" OnClientClick="SetTarget();" class="btn btn-primary" Text="View" Enabled="True" />
+                                </td>
                                 <td>
-                                    <asp:Button ID="btnview" runat="server" class="btn btn-primary" Text="View and Sign File" Enabled="True" />
+                                    <asp:Button ID="btndownload" runat="server" class="btn btn-primary" OnClientClick="Set1();" Text="Download" Enabled="True" />
+                                </td>
+                                <td>
+                                    <asp:Label ID="lblalert" runat="server" style="color:green" Text="Update successful" Visible="false"></asp:Label>
                                 </td>
                             </tr>
                         </table>
@@ -34,15 +54,15 @@
                         <asp:DropDownList ID="DropDownList1" runat="server" class="btn btn-outline-primary">
                             <asp:ListItem>Pending</asp:ListItem>
                              <asp:ListItem>Approve</asp:ListItem>
-                             <asp:ListItem>Disapprove</asp:ListItem>
+                             <asp:ListItem>Rejected</asp:ListItem>
                          </asp:DropDownList>
                     </td>
                          <td>
 
-                             &nbsp;&nbsp;&nbsp;</td>
+                             &nbsp;<asp:FileUpload ID="FileUpload1" runat="server" />
+                             &nbsp;&nbsp;</td>
                     <td>
-
-                         <asp:Button ID="btnupdate" runat="server" class="btn btn-primary" Text="Update File" Enabled="False" />
+                        <asp:Button ID="btnupdate" runat="server" class="btn btn-primary" Text="Update" />
                     </td>
                 </tr>
                          
@@ -62,16 +82,13 @@
                     </tr>
                 <tr>
                     <td >
-                        <asp:Label ID="Label11" runat="server" Text="Requestor Department :"></asp:Label>
+                        <asp:Label ID="Label11" runat="server" Text="Requestor Department :" Visible="False"></asp:Label>
                     </td>   
                          <td class="auto-style1" >
-                         <asp:Label ID="lblRequestordept" runat="server" Text=" - "></asp:Label>
+                         <asp:Label ID="lblRequestordept" runat="server" Text=" - " Visible="False"></asp:Label>
                      </td>
                 </tr>
-                <tr>
-
-                </tr>
-
+                
             </table>
 
  <hr />

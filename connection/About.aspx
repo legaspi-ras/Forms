@@ -23,9 +23,15 @@
                 </td>
                 <td style="height: 50px; width: 422px;">
                      <%--revision number/letter field--%>
-                     <asp:DropDownList ID="ddlDepartment" runat="server" DataSourceID="SqlDataSource2" DataTextField="DEPARTMENT" DataValueField="DEPARTMENT" Height="25px" ToolTip="Please select depeartment" Width="431px">
+                     <asp:DropDownList ID="ddlDepartment" runat="server" DataTextField="DEPARTMENT" DataValueField="DEPARTMENT" Height="25px" ToolTip="Please select depeartment" Width="431px">
+                         <asp:ListItem>MIS</asp:ListItem>
+                         <asp:ListItem Value="SECURITY"></asp:ListItem>
+                         <asp:ListItem>Purchasing</asp:ListItem>
+                         <asp:ListItem>Production</asp:ListItem>
+                         <asp:ListItem>PPC</asp:ListItem>
+                         <asp:ListItem>Quality Assurance</asp:ListItem>
+                         <asp:ListItem>Equipment </asp:ListItem>
                      </asp:DropDownList>
-                     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:eformsConnectionString2 %>" ProviderName="<%$ ConnectionStrings:eformsConnectionString2.ProviderName %>" SelectCommand="SELECT DISTINCT DEPARTMENT FROM emp_masterlist"></asp:SqlDataSource>
                 </td>
             </tr>
 

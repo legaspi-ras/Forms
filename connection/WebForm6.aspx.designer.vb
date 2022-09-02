@@ -41,6 +41,24 @@ Partial Public Class WebForm6
     Protected WithEvents btnsearch1 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''lblalert control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblalert As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lblalert4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblalert4 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Label1 control.
     '''</summary>
     '''<remarks>
@@ -102,6 +120,15 @@ Partial Public Class WebForm6
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnsearch2 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''lblalert1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblalert1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Label2 control.
@@ -192,6 +219,24 @@ Partial Public Class WebForm6
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents FileUpload1 As Global.System.Web.UI.WebControls.FileUpload
+
+    '''<summary>
+    '''lblalert2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblalert2 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lblalert3 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblalert3 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''btnUploadnSend control.

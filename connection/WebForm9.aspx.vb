@@ -17,7 +17,7 @@ Public Class WebForm9
         'P.Verb = "runas"
 
         'Dim pro As Process = Process.Start(P)
-        Label1.Text = "resume.pdf" ''pinaltan ko lang file name ng ecn 
+        Label1.Text = "resume.pdf" '' \\MIS-WS07\Forms\ pinaltan ko lang file name ng ecn 
 
         Process.Start("C:\Users\romer.legaspi\source\repos\connection\connection\pdf_files\" + Label1.Text)
 

@@ -48,6 +48,9 @@
                          <li class="nav-item">
                              <a class="nav-link active" aria-current="page" href="Default.aspx">Home</a>
                          </li>
+                          <li class="nav-item">
+                             <a class="nav-link" href="WebForm6.aspx">Upload Request</a>
+                         </li>
                          <li class="nav-item">
                              <a class="nav-link" href="WebForm8.aspx">View Request</a>
                          </li>                       

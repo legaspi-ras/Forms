@@ -44,11 +44,11 @@
                             <label for="txtpassword">Password</label>
                           </div>
                     
+                    <asp:Label ID="lblalert" runat="server" style="color:red" Text="Invalid username or password!" Visible="false"></asp:Label>
                     <br />
-
                     <asp:Button ID="btnLogin" runat="server" class="btn btn-primary" Text="Login" />
-                    <br /><br />
-                    <a href="Default.aspx" class="link-primary"> go to view e-forms website </a>
+                    <br />
+                    <a href="Default.aspx" class="link-primary"> << back to view e-forms webpage </a>
                 </div>
             
              

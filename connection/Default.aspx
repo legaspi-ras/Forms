@@ -19,7 +19,7 @@
                          <asp:Button ID="btnsearch" runat="server" Text="Search"  class="btn btn-outline-secondary" />
                     </div>
 
-                     <asp:GridView ID="gvfiles" class="table table-bordered table-condensed table-responsive table-hover " runat="server"  AutoGenerateColumns="False" AllowPaging="True" OnPageIndexChanging="OnPaging" PageSize="4">
+                     <asp:GridView ID="gvfiles" class="table table-bordered table-condensed table-responsive table-hover" runat="server"  AutoGenerateColumns="False" AllowPaging="True" OnPageIndexChanging="OnPaging" PageSize="4">
                          <Columns>
                              <asp:BoundField HeaderText="Form Control Number" DataField="formControlnum" SortExpression="formControlnum" />
                              <asp:BoundField HeaderText="Form Title" DataField="formTitle" SortExpression="formTitle" />
@@ -29,6 +29,7 @@
                                  </ItemTemplate>
                              </asp:TemplateField>
                          </Columns>
+                         <PagerSettings NextPageText="Next" PageButtonCount="2" PreviousPageText="" />
                      </asp:GridView>
 
                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:eformsConnectionString %>" ProviderName="<%$ ConnectionStrings:eformsConnectionString.ProviderName %>" SelectCommand="SELECT formControlnum, formTitle FROM tblform_masterlist"></asp:SqlDataSource>

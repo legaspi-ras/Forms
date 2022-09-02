@@ -30,26 +30,29 @@
                     </div>
                     </td>
                 </tr>
+                   <tr>
+                       <td style="height: 21px">
+                        <asp:Label ID="lblalert" runat="server" style="color:red" Text="Sorry, employee number doesn't exist." Visible="False"></asp:Label>
+                           <asp:Label ID="lblalert4" runat="server" style="color:red" Text="Please provide your employee number." Visible="False"></asp:Label>
+                    </td>
+                   </tr>
                 <tr>
                     <td >
                         <asp:Label ID="Label1" runat="server" Text="Requestor Full Name :"></asp:Label>
                     </td>
-                    </tr>
-                <tr>
                     <td class="auto-style1" >
-                        <asp:Label ID="lblRequestor" runat="server" Text=" - "></asp:Label>
+                        <asp:Label ID="lblRequestor" runat="server" Text="-"></asp:Label>
                     </td>
-                </tr>
+                    </tr>
                 <tr>
                     <td >
                         <asp:Label ID="Label11" runat="server" Text="Requestor Department :"></asp:Label>
-                    </td>                   
-                </tr>
-                <tr>
+                    </td>   
                      <td class="auto-style1" >
                          <asp:Label ID="lblRequestordept" runat="server" Text=" - "></asp:Label>
                      </td>
                 </tr>
+
 
             </table>
 
@@ -72,6 +75,11 @@
                       
                       </td>
 
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="lblalert1" runat="server" style="color:red" Text="Sorry, form doesn't exist." Visible="False"></asp:Label>
+                    </td>
                 </tr>
                 <tr>
                     <td ><asp:Label ID="Label2" runat="server" Text="Department :"></asp:Label></td>
@@ -98,8 +106,11 @@
                 </tr>
 
                   <tr>
-                     <td></td>
-                    <td><br /> <asp:Button ID="btnUploadnSend" runat="server" class="btn btn-primary" Text="Submit eForm" Enabled="False" /> </td>
+                     <td>
+                         <asp:Label ID="lblalert2" runat="server" style="color:green" Text="Upload Sucessfull." Visible="False"></asp:Label>
+                         <asp:Label ID="lblalert3" runat="server" style="color:red" Text="Please select pdf file." Visible="False"></asp:Label>
+                     </td>
+                    <td><br /> <asp:Button ID="btnUploadnSend" runat="server" class="btn btn-primary" Text="Upload Form" Enabled="False" /> </td>
                 </tr>
             </table>
 

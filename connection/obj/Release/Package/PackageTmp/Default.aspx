@@ -15,22 +15,21 @@
                     <h6 class="card-subtitle mb-2 text-muted">Search the e-form your looking for</h6>
      
                      <div class="input-group mb-3">
-                        <%-- <asp:TextBox ID="txtsearch" runat="server"></asp:TextBox>--%>
-                       <%-- <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>--%>
                          <input type="text" id="txtsearch" runat="server"  class ="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2">
                          <asp:Button ID="btnsearch" runat="server" Text="Search"  class="btn btn-outline-secondary" />
                     </div>
 
-                     <asp:GridView ID="gvfiles" class="table table-bordered table-condensed table-responsive table-hover " runat="server"  AutoGenerateColumns="False" AllowPaging="True" OnPageIndexChanging="OnPaging" PageSize="4">
+                     <asp:GridView ID="gvfiles" class="table table-bordered table-condensed table-responsive table-hover" runat="server"  AutoGenerateColumns="False" AllowPaging="True" OnPageIndexChanging="OnPaging" PageSize="4">
                          <Columns>
                              <asp:BoundField HeaderText="Form Control Number" DataField="formControlnum" SortExpression="formControlnum" />
                              <asp:BoundField HeaderText="Form Title" DataField="formTitle" SortExpression="formTitle" />
                              <asp:TemplateField HeaderText="Action">
                                  <ItemTemplate>
-                                     <asp:Button ID="Button1" runat="server" class="btn btn-primary" CausesValidation="false" CommandName="Select" Text="Select" />
+                                     <asp:Button ID="Button1" runat="server" class="btn btn-primary" CausesValidation="false" CommandName="Select" Text="Download" />
                                  </ItemTemplate>
                              </asp:TemplateField>
                          </Columns>
+                         <PagerSettings NextPageText="Next" PageButtonCount="2" PreviousPageText="" />
                      </asp:GridView>
 
                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:eformsConnectionString %>" ProviderName="<%$ ConnectionStrings:eformsConnectionString.ProviderName %>" SelectCommand="SELECT formControlnum, formTitle FROM tblform_masterlist"></asp:SqlDataSource>
@@ -40,7 +39,7 @@
 
                </div>
 
-           <div class ="col">
+<%--           <div class ="col">
 
                 <div class="card" >
                     <div class="card-body">
@@ -69,7 +68,6 @@
                     <td><asp:Label ID="Label5" runat="server" Text="Applicable Specifications :"></asp:Label>
                     </td>
                     <td>
-                        <%--<asp:TextBox ID="txtasn" runat="server" Enabled="True"></asp:TextBox>--%>
                         <input type="text" id="txtasn" runat="server"  class ="form-control" placeholder=""  aria-label="Recipient's username" >
                     </td>
                     
@@ -90,7 +88,6 @@
                 <tr>
                     <td>
                          <div class="input-group mb-3">
-                        <%-- <asp:TextBox ID="txtEmpnum" runat="server"></asp:TextBox>--%>
                          <input type="text" id="txtEmpnum" runat="server"  class ="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2">
                          <asp:Button ID="btnsearch1" runat="server" Text="Search"  class="btn btn-outline-secondary" />
                     </div>
@@ -128,7 +125,7 @@
                     </div>
                 </div>
 
-           </div>
+           </div>--%>
 
         </div>
 

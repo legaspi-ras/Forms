@@ -1,8 +1,5 @@
 ﻿Imports System.IO
-Imports System.Net
 Imports MySql.Data.MySqlClient
-
-
 Public Class Contact
     Inherits Page
 
@@ -21,7 +18,7 @@ Public Class Contact
         Dim query As String
 
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost'; port='3306'; username='root'; password='powerhouse'; database='eforms'")
+        connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
         query = ("SELECT * FROM tblform_masterlist WHERE formControlnum = '" & txtSearch.Text & "'")
 
@@ -49,7 +46,7 @@ Public Class Contact
 
         Else
 
-            MsgBox("Sorry. File unavailable.")
+            ' MsgBox("Sorry. File unavailable.")
 
         End If
         connection.Close()
@@ -66,7 +63,7 @@ Public Class Contact
         Dim directory As String
         Dim contentType As String
         contentType = FileUpload1.PostedFile.ContentType
-        directory = Server.MapPath("~/pdf_files/" + filename)
+        directory = "D:\Forms\Template/" + filename
 
         If contentType = "application/pdf" Then
 
@@ -107,7 +104,7 @@ Public Class Contact
                         Dim query As String
 
                         connection = New MySqlConnection
-                        connection.ConnectionString = ("server='localhost'; port='3306'; username='root'; password='powerhouse'; database='eforms'")
+                        connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
                         query = ("UPDATE tblform_masterlist SET pdfFilename = '" & filename & "', contentType = '" & contentType & "', pdfData = '" & pdfbytes(0) & "' WHERE  formControlNum = '" & formctrlnum & "'")
                         command = New MySqlCommand(query, connection)
@@ -117,13 +114,13 @@ Public Class Contact
                         reader = command.ExecuteReader()
                         reader.Read()
 
-                        FileUpload1.SaveAs(Server.MapPath("~/pdf_files/" + filename))
+                        FileUpload1.SaveAs("D:\Forms\Template" + filename)
 
                     End Using
                 End Using
 
 
-                MsgBox("File succesfully updated from the system.")
+                ' MsgBox("File succesfully updated from the system.")
 
                 Response.Redirect(Request.Url.AbsoluteUri)
 
@@ -131,13 +128,13 @@ Public Class Contact
 
             Else
 
-                MsgBox("Please select a PDF file for upload! ")
+                ' MsgBox("Please select a PDF file for upload! ")
 
             End If
 
         Else
 
-            MsgBox("Please select a PDF file for upload! ")
+            'MsgBox("Please select a PDF file for upload! ")
 
         End If
 
