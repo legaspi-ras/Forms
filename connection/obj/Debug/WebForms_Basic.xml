@@ -64,6 +64,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:connection.adminupload._lblalert">
+<summary>
+lblalert control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:connection.adminupload._Label6">
 <summary>
 Label6 control.
@@ -256,15 +265,6 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:connection.About._ddlDepartment">
 <summary>
 ddlDepartment control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:connection.About._SqlDataSource2">
-<summary>
-SqlDataSource2 control.
 </summary>
 <remarks>
 Auto-generated field.

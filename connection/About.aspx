@@ -25,12 +25,18 @@
                      <%--revision number/letter field--%>
                      <asp:DropDownList ID="ddlDepartment" runat="server" DataTextField="DEPARTMENT" DataValueField="DEPARTMENT" Height="25px" ToolTip="Please select depeartment" Width="431px">
                          <asp:ListItem>MIS</asp:ListItem>
-                         <asp:ListItem Value="SECURITY"></asp:ListItem>
+                         <asp:ListItem Value="Security">Security</asp:ListItem>
                          <asp:ListItem>Purchasing</asp:ListItem>
                          <asp:ListItem>Production</asp:ListItem>
                          <asp:ListItem>PPC</asp:ListItem>
                          <asp:ListItem>Quality Assurance</asp:ListItem>
                          <asp:ListItem>Equipment </asp:ListItem>
+                         <asp:ListItem>Store</asp:ListItem>
+                         <asp:ListItem>Human Resource</asp:ListItem>
+                         <asp:ListItem>Finance</asp:ListItem>
+                         <asp:ListItem>Logistic</asp:ListItem>
+                         <asp:ListItem>Training</asp:ListItem>
+                         <asp:ListItem>Process</asp:ListItem>
                      </asp:DropDownList>
                 </td>
             </tr>

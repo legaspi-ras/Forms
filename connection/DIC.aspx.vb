@@ -7,9 +7,25 @@ Public Class DIC1
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        ''call function Searchfile for loading data gridview
-        If Not Me.IsPostBack Then
-            Me.Displayfile()
+        If HttpContext.Current.Session("empid") <> "" Then
+
+            If HttpContext.Current.Session("logstatus") = "Login" And HttpContext.Current.Session(“usertype”) = "admin" Then
+
+                ''call function Searchfile for loading data gridview
+                If Not Me.IsPostBack Then
+                    Me.Displayfile()
+                End If
+
+            Else
+
+                Response.Redirect("Login.aspx")
+
+            End If
+
+        Else
+
+            Response.Redirect("Login.aspx")
+
         End If
 
     End Sub

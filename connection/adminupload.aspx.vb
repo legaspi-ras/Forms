@@ -8,12 +8,26 @@ Public Class adminupload
     Dim command As MySqlCommand
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        lblRequestor.Text = HttpContext.Current.Session(“requestor”)
-        lblRequestordept.Text = HttpContext.Current.Session("formdepartment")
-        lblFormctrlnum.Text = HttpContext.Current.Session(“formctrlnum”)
-        lblFormtitle.Text = HttpContext.Current.Session(“formtitle”)
-        lblAppsspecs.Text = HttpContext.Current.Session(“appspecs”)
-        lblFormdept.Text = HttpContext.Current.Session(“formdepartment”)
+        If HttpContext.Current.Session("empid") <> "" Then
+
+            If HttpContext.Current.Session("logstatus") = "Login" And HttpContext.Current.Session(“usertype”) = "admin" Then
+
+                lblRequestor.Text = HttpContext.Current.Session(“requestor”)
+                lblRequestordept.Text = HttpContext.Current.Session("formdepartment")
+                lblFormctrlnum.Text = HttpContext.Current.Session(“formctrlnum”)
+                lblFormtitle.Text = HttpContext.Current.Session(“formtitle”)
+                lblAppsspecs.Text = HttpContext.Current.Session(“appspecs”)
+                lblFormdept.Text = HttpContext.Current.Session(“formdepartment”)
+
+            Else
+
+                Response.Redirect("Login.aspx")
+
+            End If
+
+        Else
+            Response.Redirect("Login.aspx")
+        End If
 
         ' btnupdate.Enabled = False
 
@@ -113,7 +127,7 @@ Public Class adminupload
 
                     ' delete muna ang lumang file na guston paltan. --------------------------------
 
-                    File.Delete(directory)
+                    File.Delete(directory) 'delete ang luma tapos lipat save sa kanyang dept folder.
 
                     'end of deleteing --------------------------------------------------------------
 
@@ -123,7 +137,7 @@ Public Class adminupload
 
                         ' save niya sa folder na for approval 
                         FileUpload1.SaveAs("D:\Forms\Approval\" + savefilename)
-
+                        ''
                     End Using
 
                     ' end -----  
@@ -137,10 +151,57 @@ Public Class adminupload
                         Case "MIS"
 
                             FileUpload1.SaveAs("D:\Forms\Final\mis\" + savefilename)
+                            lblalert.Visible = True
 
                         Case "Security"
 
                             FileUpload1.SaveAs("D:\Forms\Final\security\" + savefilename)
+                            lblalert.Visible = True
+
+                        Case "Equipment"
+
+                            FileUpload1.SaveAs("D:\Forms\Final\ee\" + savefilename)
+                            lblalert.Visible = True
+
+                        Case "Facility"
+
+                            FileUpload1.SaveAs("D:\Forms\Final\facility\" + savefilename)
+                            lblalert.Visible = True
+
+                        Case "Finance"
+
+                            FileUpload1.SaveAs("D:\Forms\Final\finance\" + savefilename)
+                            lblalert.Visible = True
+
+                        Case "Human Resource"
+
+                            FileUpload1.SaveAs("D:\Forms\Final\hrd\" + savefilename)
+                            lblalert.Visible = True
+
+                        Case "Logistic"
+
+                            FileUpload1.SaveAs("D:\Forms\Final\logistic\" + savefilename)
+                            lblalert.Visible = True
+
+                        Case "Planning"
+
+                            FileUpload1.SaveAs("D:\Forms\Final\planning\" + savefilename)
+                            lblalert.Visible = True
+
+                        Case "Process"
+
+                            FileUpload1.SaveAs("D:\Forms\Final\process\" + savefilename)
+                            lblalert.Visible = True
+
+                        Case "Purchasing"
+
+                            FileUpload1.SaveAs("D:\Forms\Final\purchasing\" + savefilename)
+                            lblalert.Visible = True
+
+                        Case "Training"
+
+                            FileUpload1.SaveAs("D:\Forms\Final\training\" + savefilename)
+                            lblalert.Visible = True
 
                         Case Else
 

@@ -75,7 +75,7 @@ Public Class _Default
         connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
 
 
-        query = ("SELECT * FROM tblform_masterlist WHERE formControlnum LIKE '" & frmsearch & "%' OR formTitle LIKE '" & frmsearch & "%' ")
+        query = ("SELECT * FROM tblform_masterlist WHERE formControlnum LIKE '%" & frmsearch & "%' OR formTitle LIKE '%" & frmsearch & "%' ")
 
         command = New MySqlCommand(query, connection)
         connection.Open()

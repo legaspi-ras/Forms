@@ -34,6 +34,9 @@
                                 <td>
                                     <asp:Button ID="btndownload" runat="server" class="btn btn-primary" Text="Download" Enabled="True" />
                                 </td>
+                                <td>
+                                    <asp:Label ID="lblalert" runat="server" style="color:green" Text="Update successful" Visible="false"></asp:Label>
+                                </td>
                             </tr>
                         </table>
                         
@@ -51,6 +54,15 @@
                         <asp:DropDownList ID="DropDownList1" runat="server" class="btn btn-outline-primary">
                             <asp:ListItem>MIS</asp:ListItem>
                              <asp:ListItem>Security</asp:ListItem>
+                            <asp:ListItem>Equipment</asp:ListItem>
+                            <asp:ListItem>Facility</asp:ListItem>
+                            <asp:ListItem>Finance</asp:ListItem>
+                            <asp:ListItem>Human Resource</asp:ListItem>
+                            <asp:ListItem>Logistic</asp:ListItem>
+                            <asp:ListItem>Purchasing</asp:ListItem>
+                            <asp:ListItem>Process</asp:ListItem>
+                            <asp:ListItem>Planning</asp:ListItem>
+                            <asp:ListItem>Training</asp:ListItem>
                          </asp:DropDownList>
                     </td>
                          <td>

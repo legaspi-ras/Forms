@@ -8,14 +8,41 @@ Public Class WebForm10
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        Application("docstatus") = "active"
 
-        lblEmpname.Text = HttpContext.Current.Session(“empname”)
 
-        ''call function Searchfile for loading data gridview
-        If Not Me.IsPostBack Then
-            Me.Searchfile()
+        If HttpContext.Current.Session("empid") <> "" Then
+
+            If HttpContext.Current.Session(“logstatus”) = "Login" And HttpContext.Current.Session(“usertype”) = "approver" Then
+
+                Application("docstatus") = "active"
+
+                lblEmpname.Text = HttpContext.Current.Session(“empname”)
+
+                ''call function Searchfile for loading data gridview
+                If Not Me.IsPostBack Then
+                    Me.Searchfile()
+                End If
+
+            Else
+
+                Session.RemoveAll()
+                Session.Clear()
+                Session.Abandon()
+
+                Response.Redirect("Login.aspx")
+
+            End If
+
+        Else
+
+            Session.RemoveAll()
+            Session.Clear()
+            Session.Abandon()
+
+            Response.Redirect("Login.aspx")
+
         End If
+
 
     End Sub
 
@@ -151,20 +178,22 @@ Public Class WebForm10
         reader = command.ExecuteReader()
         reader.Read()
 
-        logstatus = reader(2)
-        usernow = reader(1)
+        If reader.HasRows Then
 
-        reader.Close()
-        connection.Close()
+            logstatus = reader(2)
+            usernow = reader(1)
 
-
-        Dim logoutdatentime = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
-
-
-        query = ("UPDATE tblloginhistory SET logstatus = 'Logout', applicableSpecs = '" & HttpContext.Current.Session(“appspecs”) & "', formControlnum = '" & HttpContext.Current.Session(“formctrlnum”) & "' , logoutDatentime = '" & logoutdatentime & "' WHERE empId = '" & empuser.Text & "' AND logStatus = 'Login'")
+            reader.Close()
+            connection.Close()
 
 
-        command = New MySqlCommand(query, connection)
+            Dim logoutdatentime = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
+
+
+            query = ("UPDATE tblloginhistory SET logstatus = 'Logout', applicableSpecs = '" & HttpContext.Current.Session(“appspecs”) & "', formControlnum = '" & HttpContext.Current.Session(“formctrlnum”) & "' , logoutDatentime = '" & logoutdatentime & "' WHERE empId = '" & empuser.Text & "' AND logStatus = 'Login'")
+
+
+            command = New MySqlCommand(query, connection)
             connection.Open()
 
             reader = command.ExecuteReader()
@@ -174,15 +203,25 @@ Public Class WebForm10
             connection.Close()
 
 
-        '' call niya na dito yung next window tab na for viewing for approval
+            '' call niya na dito yung next window tab na for viewing for approval
 
-        HttpContext.Current.Session.Remove(“empId”)
-        Session.RemoveAll()
-        Session.Clear()
-        Session.Abandon()
+            HttpContext.Current.Session.Remove(“empId”)
+            Session.RemoveAll()
+            Session.Clear()
+            Session.Abandon()
 
-        Response.Redirect("Login.aspx")
+            Response.Redirect("Login.aspx")
 
+        Else
+
+            HttpContext.Current.Session.Remove(“empId”)
+            Session.RemoveAll()
+            Session.Clear()
+            Session.Abandon()
+
+            Response.Redirect("Login.aspx")
+
+        End If
 
 
     End Sub

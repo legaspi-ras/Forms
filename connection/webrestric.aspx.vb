@@ -21,7 +21,7 @@ Public Class webrestric
 
 
         appspecs = HttpContext.Current.Session(“appspecs”)
-        empid = HttpContext.Current.Session(“empid”)
+        ' empid = HttpContext.Current.Session(“empid”)
 
         connection = New MySqlConnection
         connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
@@ -37,6 +37,7 @@ Public Class webrestric
 
         If reader.HasRows Then
 
+            empid = reader(1)
             pdffilename = reader(5)
             logstatus = reader(2)
             docstatus = reader(7)
@@ -44,10 +45,26 @@ Public Class webrestric
             reader.Close()
             connection.Close()
 
+            query = ("SELECT EMP_NAME FROM emp_masterlist where EMP_NO = '" & empid & "'")
+
+            command = New MySqlCommand(query, connection)
+            connection.Open()
+
+            reader = command.ExecuteReader()
+            reader.Read()
+
+            Dim emp_fullname As String
+
+            emp_fullname = reader(0)
+
+            Label1.Text = emp_fullname
+
+            reader.Close()
+            connection.Close()
+
             If logstatus = "Login" And pdffilename = appspecs And docstatus = "Active" Then
 
-
-                Response.Redirect("WebForm10.aspx")
+                ' Response.Redirect("WebForm10.aspx")
 
             Else
 

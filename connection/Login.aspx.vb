@@ -44,6 +44,8 @@ Public Class Login
             Select Case userType
 
                 Case "approver"
+                    HttpContext.Current.Session("logstatus") = "Login"
+                    HttpContext.Current.Session("usertype") = "approver"
                     HttpContext.Current.Session("documentStatus") = ""
 
                     Dim logindatentime = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
@@ -86,13 +88,13 @@ Public Class Login
                     Response.Redirect("WebForm10.aspx")
 
 
-                Case "editor"
-
+                Case "admin"
+                    HttpContext.Current.Session(“empId”) = username
+                    HttpContext.Current.Session("logstatus") = "Login"
+                    HttpContext.Current.Session("usertype") = "admin"
                     Response.Redirect("DIC.aspx")
 
             End Select
-
-
 
         Else
             reader.Close()

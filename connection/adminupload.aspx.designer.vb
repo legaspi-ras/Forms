@@ -41,6 +41,15 @@ Partial Public Class adminupload
     Protected WithEvents btndownload As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''lblalert control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblalert As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Label6 control.
     '''</summary>
     '''<remarks>

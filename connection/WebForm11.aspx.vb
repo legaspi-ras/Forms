@@ -9,141 +9,25 @@ Public Class WebForm11
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
+        If HttpContext.Current.Session("empid") <> "" Then
 
-        ' start restriction-----------------------------------------------------------------------
+            If HttpContext.Current.Session("logstatus") = "Login" And HttpContext.Current.Session(“usertype”) = "approver" Then
 
-        'Dim query As String
-        'Dim empid As String
-        'Dim appspecs As String
-        'Dim pdffilename As String
-        'Dim docstatus As String
+                lblRequestor.Text = HttpContext.Current.Session(“requestor”)
+                lblFormctrlnum.Text = HttpContext.Current.Session(“formctrlnum”)
+                lblFormtitle.Text = HttpContext.Current.Session(“formtitle”)
+                lblAppsspecs.Text = HttpContext.Current.Session(“appspecs”)
+                lblFormdept.Text = HttpContext.Current.Session(“formdepartment”)
 
+            Else
 
-        'appspecs = HttpContext.Current.Session(“appspecs”)
-        'empid = HttpContext.Current.Session(“empid”)
+                Response.Redirect("Login.aspx")
 
-        'connection = New MySqlConnection
-        'connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
+            End If
 
-        'query = ("SELECT * FROM tblloginhistory WHERE empId = '" & empid & "' AND logstatus = 'Login'")
-
-        'command = New MySqlCommand(query, connection)
-        'connection.Open()
-
-        'Dim reader As MySqlDataReader
-        'reader = command.ExecuteReader()
-        'reader.Read()
-
-        'pdffilename = reader(5)
-        'docstatus = reader(2)
-
-        'If reader.HasRows Then
-
-        '    reader.Close()
-        '    connection.Close()
-
-        '    If docstatus = "Login" And pdffilename = appspecs Then
-
-        '        Response.Write("<script> alert(" & "sorry someone is using the file" & ")")
-        '        Response.Redirect("WebForm10.aspx")
-
-        '    Else
-        '        Response.Write("<script> alert(" & "sorry someone is using the file" & ") <script>")
-        '        'update loginhistory - status -------------------------------------
-        '        query = ("UPDATE tblloginhistory SET applicableSpecs = '" & HttpContext.Current.Session(“appspecs”) & "', formControlnum = '" & HttpContext.Current.Session(“formctrlnum”) & "' WHERE empId = '" & HttpContext.Current.Session(“empId”) & "' AND logStatus = 'Login'")
-
-        '        command = New MySqlCommand(query, connection)
-        '        connection.Open()
-
-        '        reader = command.ExecuteReader()
-        '        reader.Read()
-
-        '        reader.Close()
-        '        connection.Close()
-        '        ' end update --------------------------------------------------------
-
-        lblRequestor.Text = HttpContext.Current.Session(“requestor”)
-        lblFormctrlnum.Text = HttpContext.Current.Session(“formctrlnum”)
-        lblFormtitle.Text = HttpContext.Current.Session(“formtitle”)
-        lblAppsspecs.Text = HttpContext.Current.Session(“appspecs”)
-        lblFormdept.Text = HttpContext.Current.Session(“formdepartment”)
-
-        '    End If
-        '    '    'update loginhistory - status -------------------------------------
-        '    '    query = ("UPDATE tblloginhistory SET applicableSpecs = '" & HttpContext.Current.Session(“appspecs”) & "', formControlnum = '" & HttpContext.Current.Session(“formctrlnum”) & "' WHERE empId = '" & HttpContext.Current.Session(“empId”) & "' AND logStatus = 'Login'")
-
-        '    '    command = New MySqlCommand(query, connection)
-        '    '    connection.Open()
-
-        '    '    reader = command.ExecuteReader()
-        '    '    reader.Read()
-
-        '    '    reader.Close()
-        '    '    connection.Close()
-        '    '    ' end update --------------------------------------------------------
-
-        '    '    lblRequestor.Text = HttpContext.Current.Session(“requestor”)
-        '    '    lblFormctrlnum.Text = HttpContext.Current.Session(“formctrlnum”)
-        '    '    lblFormtitle.Text = HttpContext.Current.Session(“formtitle”)
-        '    '    lblAppsspecs.Text = HttpContext.Current.Session(“appspecs”)
-        '    '    lblFormdept.Text = HttpContext.Current.Session(“formdepartment”)
-        'Else
-        '    reader.Close()
-        '    connection.Close()
-        '    Response.Redirect("WebForm10.aspx")
-
-        'End If
-
-        'reader.Close()
-        'connection.Close()
-
-        ' end restriction ------------------------------
-
-        'If HttpContext.Current.Session("documentStatus") = "Active" Then
-
-        '    ' MsgBox("Sorry. The document is currently updating by the other approver. Try again later.")
-        '    Response.Redirect("WebForm10.aspx")
-
-        'Else
-        '    HttpContext.Current.Session("documentStatus") = "Active"
-
-        '    'Dim query As String
-        '    'Dim search As String
-
-        '    'search = lblRequestor.Text
-
-        '    'connection = New MySqlConnection
-        '    'connection.ConnectionString = ("server='127.0.0.1'; port='3306'; username='root'; password='POWERHOUSE'; database='eforms'")
-
-
-        '    'query = ("SELECT EMP_NAME, DEPARTMENT FROM emp_masterlist WHERE EMP_NO = '" & HttpContext.Current.Session(“empId”) & "'") '' approver side na tayo kaya yung yung empId ay kay approver
-
-        '    'command = New MySqlCommand(query, connection)
-        '    'connection.Open()
-
-        '    'Dim reader As MySqlDataReader
-        '    'reader = command.ExecuteReader()
-        '    'reader.Read()
-
-        '    'Dim empdept As String
-
-        '    'empdept = reader(1)
-
-        '    'reader.Close()
-        '    'connection.Close()
-
-        '    lblRequestor.Text = HttpContext.Current.Session(“requestor”)
-        '    'lblRequestordept.Text = empdept 'baka tanggalin na to dahil hindi naman kailangan
-        '    lblFormctrlnum.Text = HttpContext.Current.Session(“formctrlnum”)
-        '    lblFormtitle.Text = HttpContext.Current.Session(“formtitle”)
-        '    lblAppsspecs.Text = HttpContext.Current.Session(“appspecs”)
-        '    lblFormdept.Text = HttpContext.Current.Session(“formdepartment”)
-
-        '    ' btnupdate.Enabled = False
-
-
-        'End If
-
+        Else
+            Response.Redirect("Login.aspx")
+        End If
 
     End Sub
 
@@ -325,6 +209,9 @@ Public Class WebForm11
         connection.Close()
 
         HttpContext.Current.Session("documentStatus") = ""
+        Session.RemoveAll()
+        Session.Clear()
+        Session.Abandon()
         Response.Redirect("Login.aspx")
 
     End Sub

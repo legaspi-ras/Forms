@@ -5,8 +5,18 @@ Public Class Contact
 
     Dim connection As MySqlConnection
     Dim command As MySqlCommand
-
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
+
+        If HttpContext.Current.Session("empid") <> "" Then
+            If HttpContext.Current.Session("logstatus") = "Login" And HttpContext.Current.Session(“usertype”) = "admin" Then
+
+            Else
+
+                Response.Redirect("Login.aspx")
+            End If
+        Else
+            Response.Redirect("Login.aspx")
+        End If
 
 
     End Sub

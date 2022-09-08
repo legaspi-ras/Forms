@@ -53,13 +53,19 @@
                          </li>
                          <li class="nav-item">
                              <a class="nav-link" href="WebForm8.aspx">View Request</a>
-                         </li>                       
+                         </li>
+                         <li class="nav-item">
+                             <a class="nav-link" href="Login.aspx">Login</a>
+                         </li>  
+                        <%--                        
                          <li class="nav-item">
                              <a class="nav-link" href="Login.aspx">Approvers</a>
                          </li> 
                          <li class="nav-item">
                              <a class="nav-link" href="Login.aspx">DIC</a>
                          </li>
+                            --%>
+
         </ul>
       </div>
     </div>

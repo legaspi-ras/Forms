@@ -8,8 +8,20 @@ Public Class About
     Dim command As MySqlCommand
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
 
-        txtFormctrlnum.Attributes.Add("placeholder", "i.e. MIS-04")
-        txtFormtitle.Attributes.Add("placeholder", "i.e. Computer/Laptop Peripherals Issuance Slip")
+        If HttpContext.Current.Session("empid") <> "" Then
+            If HttpContext.Current.Session("logstatus") = "Login" And HttpContext.Current.Session(“usertype”) = "admin" Then
+
+                txtFormctrlnum.Attributes.Add("placeholder", "i.e. MIS-04")
+                txtFormtitle.Attributes.Add("placeholder", "i.e. Computer/Laptop Peripherals Issuance Slip")
+
+            Else
+
+                Response.Redirect("Login.aspx")
+            End If
+        Else
+            Response.Redirect("Login.aspx")
+        End If
+
 
     End Sub
 

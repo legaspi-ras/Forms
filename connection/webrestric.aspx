@@ -22,12 +22,22 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
         <div>
 
-        
+        <div class="card text-center">
+            <div class="card-header">     
+                <h5 style ="color:dodgerblue"> Heads up! </h5> 
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Sorry, <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>  is currenly using the file.</h5>
+                <p class="card-text">Please try again later. Try accessing other files that needs your approval. Thank you. </p>
+             <a href="WebForm10.aspx" class="btn btn-primary">Go back</a>
+          </div>
+       </div>
 
         </div>
-        <asp:Label ID="Label1" runat="server" Text="sorry some one is using the file."></asp:Label>
+        
     </form>
 </body>
 </html>
